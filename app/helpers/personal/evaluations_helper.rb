@@ -1,0 +1,2 @@
+module Personal::EvaluationsHelper
+end
