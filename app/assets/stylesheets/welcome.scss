@@ -1,3 +1,155 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//---------Header---------
+.header {
+  background-image: url("header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .box {
+    text-align: center;
+    margin: 120px 0;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .title {
+    font-size: 3em;
+    text-shadow: 0 0 5px #666;
+    color: #FFF;
+  }
+
+  .slogan {
+    margin-top: 40px;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 5px #666;
+    color: #FFF;
+  }
+
+  .lead a {
+    padding: 10px 30px;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #FFF;
+    border-color: #FFF;
+    background-color: transparent;
+  }
+
+  .lead a:hover,
+  .lead a:focus {
+    color: #27AE60;
+    border-color: #27AE60;
+    background-color: transparent;
+  }
+}
+
+//---------Content---------
+.short-line {
+  height: 4px;
+  width: 60px;
+  margin: 0 auto;
+  background-color: #27AE60;
+}
+
+.feature {
+  text-align: center;
+  h2 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1.1em;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+    color: #757575;
+  }
+}
+
+.content-1 {
+  background-color: #F5F5F5;
+  padding: 60px 0 100px;
+
+  .image {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #FFF;
+    margin: 60px 60px 0;
+  }
+}
+
+.content-2 {
+  padding: 60px 0 100px;
+
+  .container {
+    margin-top: 60px;
+  }
+
+  .person {
+    text-align: center;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .name {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #757575;
+  }
+
+  .words{
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    color: #9E9E9E;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+
+    .quote-left {
+      color: #9E9E9E;
+      margin-right: 100%;
+    }
+
+    .quote-right {
+      color: #9E9E9E;
+      margin-left: 100%;
+    }
+  }
+
+}
+
+.bottom {
+  background-image: url("bottom.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .box {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .lead a {
+    padding: 10px 30px;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #FFF;
+    border-color: #FFF;
+    background-color: transparent;
+  }
+
+  .lead a:hover,
+  .lead a:focus {
+    color: #27AE60;
+    border-color: #27AE60;
+    background-color: transparent;
+  }
+}

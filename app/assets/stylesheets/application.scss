@@ -120,6 +120,7 @@
 }
 
 .navbar-default {
+  font-size: 1.1em;
   background-color: #212121;
   border-color: #212121;
   margin-bottom: 0;
@@ -128,7 +129,7 @@
 
 .navbar-default .navbar-brand {
   .logo {
-    font-size: 20px;
+    font-size: 1.4em;
     img {
       margin-top: -5px;
       margin-right: 10px;
@@ -136,29 +137,39 @@
       height: 24px;
     }
   }
-  color: #EEEEEE;
+  color: #FFF;
 }
 
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-  color: #BDBDBD;
+  color: #FFF;
   background-color: transparent;
 }
 
+.navbar-default .search-box {
+  min-width: 300px;
+  .form-control {
+    border-radius: 2px;
+  }
+  .btn-default {
+    border-radius: 2px;
+  }
+}
+
 .navbar-default .navbar-nav > li > a {
-  color: #EEEEEE;
+  color: #BDBDBD;
 }
 
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-  color: #BDBDBD;
+  color: #EEE;
   background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
-  color: #BDBDBD;
+  color: #EEE;
   background-color: #FFE0B2;
 }
 
@@ -168,83 +179,22 @@
   background-color: #FFE0B2;
   color: #212121;
 }
-//---------Header---------
-.header {
-  background-image: url("header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 
-  .title {
-    text-align: left;
-    margin-bottom: 60px;
-  }
-
-  .slogan {
-    color: #222;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    text-align: left;
-    font-size: 25px;
-    top: 12px;
-  }
-
-  .lead {
-    margin-bottom: 60px;
-    text-align: left;
-    color: white;
-  }
-
-  .lead .btn-danger {
-    width: 200px;
-    font-size: 20px;
-    border-color: #212121;
-    background-color: #212121;
-  }
-}
-//---------Content---------
-.content {
-  min-height: 768px;
-}
-
-.content-section-a {
-  padding: 50px 0;
-  background-color: #f8f8f8;
-}
-
-.content-section-b {
-  padding: 50px 0;
-  border-top: 1px solid #e7e7e7;
-  border-bottom: 1px solid #e7e7e7;
-}
-
-.section-heading-spacer {
-  float: left;
-  width: 200px;
-  border-top: 3px solid #e7e7e7;
-}
-
-.section-heading {
-  margin-bottom: 30px;
-}
-
-.lead {
-  font-size: 18px;
-  font-weight: 400;
-}
 //---------Footer---------
 footer {
-  color: #EEEEEE;
+  font-size: 1.1em;
+  color: #BDBDBD;
 }
 
 footer .footer-below {
   padding: 25px 0;
   background-color: #212121;
   a {
-    color: #3FC683;
+    color: #27AE60;
   }
   a:hover,
   a:focus {
-    color: #4DB6AC;
+    color: #00893C;
   }
 }
 
