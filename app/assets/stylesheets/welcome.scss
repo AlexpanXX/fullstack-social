@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//---------Common---------
+.lead a {
+  padding: 10px 30px;
+  font-size: 16px;
+  margin-top: 40px;
+  color: #FFF;
+  border-color: #FFF;
+  background-color: transparent;
+}
+
+.lead a:hover,
+.lead a:focus {
+  color: #E0E0E0;
+  border-color: #E0E0E0;
+  background-color: transparent;
+}
+
 //---------Header---------
 .header {
   background-image: url("header.jpg");
@@ -27,22 +44,6 @@
     letter-spacing: 0.1em;
     text-shadow: 0 0 5px #666;
     color: #FFF;
-  }
-
-  .lead a {
-    padding: 10px 30px;
-    margin-top: 40px;
-    font-size: 16px;
-    color: #FFF;
-    border-color: #FFF;
-    background-color: transparent;
-  }
-
-  .lead a:hover,
-  .lead a:focus {
-    color: #27AE60;
-    border-color: #27AE60;
-    background-color: transparent;
   }
 }
 
@@ -135,21 +136,5 @@
     text-align: center;
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .lead a {
-    padding: 10px 30px;
-    margin-top: 40px;
-    font-size: 16px;
-    color: #FFF;
-    border-color: #FFF;
-    background-color: transparent;
-  }
-
-  .lead a:hover,
-  .lead a:focus {
-    color: #27AE60;
-    border-color: #27AE60;
-    background-color: transparent;
   }
 }

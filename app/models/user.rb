@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :sent_evaluates, class_name: "Evaluation", foreign_key: :valuer_id
   has_many :received_evaluates, class_name: "Evaluation", foreign_key: :receiver_id
 
+  def admin?
+    self.is_admin
+  end
 end
