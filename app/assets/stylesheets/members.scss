@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.member-list {
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
 .card {
   margin: 20px 10px;
   hr {
@@ -23,7 +28,7 @@
   border-bottom-right-radius: 5px;
 
   .card-avatar {
-    margin-top: -45px;
+    margin-top: -65px;
     .avatar {
       margin: 0 auto;
       width: 90px;
