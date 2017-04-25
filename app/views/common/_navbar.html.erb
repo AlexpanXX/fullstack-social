@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default<%= params[:controller] == 'welcome' ? '' : ' navbar-fixed-top' %>" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
@@ -6,9 +6,12 @@
       </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to("<span class='fa fa-safari fa-lg' aria-hidden='true'></span> 发现".html_safe, members_path) %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= form_tag "#" , method: :get, class: "navbar-form"  do %>
+          <%= form_tag members_path , method: :get, class: "navbar-form"  do %>
             <div class="input-group search-box" id="search-id" >
               <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="小伙伴们正在等你...">
               <div class="input-group-btn">
@@ -26,8 +29,8 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               <span class="fa fa-user" aria-hidden="true">
-                <% if current_user.nicname.present? %>
-                  <%= current_user.nicname %>
+                <% if current_user.nickname.present? %>
+                  <%= current_user.nickname %>
                 <% else %>
                   <%= current_user.email %>
                 <% end %>

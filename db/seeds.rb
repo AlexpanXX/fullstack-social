@@ -13,9 +13,10 @@ User.create!(
   email: "ppgod@live.cn",
   password: "12345678",
   nickname: "Alex",
+  gender: "男",
   wechat: "NewbieGeek",
   github: "https://github.com/AlexpanXX",
-  logdown: "https://alexpan-blog/logdown.com",
+  logdown: "https://alexpan-blog.logdown.com",
   role: "学员",
   is_admin: true
 )
@@ -26,9 +27,10 @@ num = 0
   email: "student_" + (num += 1).to_s + "@live.cn",
   password: "12345678",
   nickname: "Student " + num.to_s,
+  gender: num % 2 == 0 ? "男" : "女",
   wechat: "NewbieGeek",
   github: "https://github.com/AlexpanXX",
-  logdown: "https://alexpan-blog/logdown.com",
+  logdown: "https://alexpan-blog.logdown.com",
   role: "学员"
   )
 }
@@ -39,9 +41,10 @@ num = 0
   email: "teacher_" + (num += 1).to_s + "@live.cn",
   password: "12345678",
   nickname: "Teacher " + num.to_s,
+  gender: num % 2 == 0 ? "男" : "女",
   wechat: "NewbieGeek",
   github: "https://github.com/AlexpanXX",
-  logdown: "https://alexpan-blog/logdown.com",
+  logdown: "https://alexpan-blog.logdown.com",
   role: "老师"
   )
 }

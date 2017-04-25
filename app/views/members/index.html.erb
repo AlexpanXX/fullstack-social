@@ -1,0 +1,6 @@
+<div class="container">
+  <%= render partial: "member", collection: @members, as: :member %>
+  <div class="text-center">
+    <%= will_paginate @members, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

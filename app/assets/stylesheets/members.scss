@@ -1,3 +1,121 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card {
+  margin: 20px 10px;
+  hr {
+    margin: 15px 0;
+  }
+}
+
+.card-img-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-content {
+  text-align: center;
+  border: 1px solid #b9b9b9;
+  border-top: 0px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  .card-avatar {
+    margin-top: -45px;
+    .avatar {
+      margin: 0 auto;
+      width: 90px;
+      height: 90px;
+      border: 1px solid #b9b9b9;
+      border-radius: 50%;
+      box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+    }
+  }
+
+  .card-title {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+
+  .card-role {
+    i {
+      display: inline-block;
+      height: 26px;
+      width: 28px;
+      color: #FFF;
+      font-size: 1em;
+      padding-top: 6px;
+      margin-left: 0.3em;
+      vertical-align: middle;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    .gender-male {
+      background-color: #3F51B5;
+    }
+    .gender-female {
+      background-color: #E91E63;
+    }
+    span {
+      display: inline-block;
+      height: 26px;
+      width: 70px;
+      color: #FFF;
+      font-size: 12px;
+      padding-top: 5px;
+      margin-left: -0.3em;
+      vertical-align: middle;
+      letter-spacing: 0.06em;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    .role-teacher {
+      background-color: #9C27B0;
+    }
+    .role-student {
+      background-color: #4CAF50;
+    }
+  }
+
+  .card-social {
+    margin-top: 15px;
+    .btn {
+      margin: 0 5px;
+      font-size: 0.8em;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    }
+  }
+
+  .card-links {
+    a {
+      margin: 0 15px;
+      box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+    }
+    a:focus,
+    a:hover {
+      box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+    }
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .card-wechat {
+    color: #757575;
+    margin-top: 15px;
+    background-color: #F5F5F5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

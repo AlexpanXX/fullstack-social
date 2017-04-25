@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170422031708) do
     t.datetime "updated_at",                             null: false
     t.string   "avatar"
     t.string   "nickname"
+    t.string   "gender"
     t.string   "wechat"
     t.string   "github"
     t.string   "logdown"
