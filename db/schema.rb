@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20170422031708) do
     t.integer  "type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["receiver_id"], name: "index_evaluations_on_receiver_id"
+    t.index ["valuer_id"], name: "index_evaluations_on_valuer_id"
   end
 
   create_table "invitations", force: :cascade do |t|
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170422031708) do
     t.integer  "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["invited_id"], name: "index_invitations_on_invited_id"
+    t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,10 +49,11 @@ ActiveRecord::Schema.define(version: 20170422031708) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "avatar"
-    t.string   "nicname"
+    t.string   "nickname"
     t.string   "wechat"
     t.string   "github"
     t.string   "logdown"
+    t.string   "role"
     t.boolean  "is_admin",               default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -10,23 +10,25 @@ Invitation.delete_all
 Evaluation.delete_all
 
 User.create!(
-  email: "ppgod@live.cn"
-  nicname: "Alex"
-  wechat: "NewbieGeek"
-  github: "https://github.com/AlexpanXX"
-  logdown: "https://alexpan-blog/logdown.com"
-  role: "学员"
+  email: "ppgod@live.cn",
+  password: "12345678",
+  nickname: "Alex",
+  wechat: "NewbieGeek",
+  github: "https://github.com/AlexpanXX",
+  logdown: "https://alexpan-blog/logdown.com",
+  role: "学员",
   is_admin: true
 )
 
 num = 0
 100.times {
   User.create!(
-  email: "student_" + (num += 1).to_s + "@live.cn"
-  nicname: "Student " + num.to_s
-  wechat: "NewbieGeek"
-  github: "https://github.com/AlexpanXX"
-  logdown: "https://alexpan-blog/logdown.com"
+  email: "student_" + (num += 1).to_s + "@live.cn",
+  password: "12345678",
+  nickname: "Student " + num.to_s,
+  wechat: "NewbieGeek",
+  github: "https://github.com/AlexpanXX",
+  logdown: "https://alexpan-blog/logdown.com",
   role: "学员"
   )
 }
@@ -34,11 +36,12 @@ num = 0
 num = 0
 50.times {
   User.create!(
-  email: "teacher_" + (num += 1).to_s + "@live.cn"
-  nicname: "Teacher " + num.to_s
-  wechat: "NewbieGeek"
-  github: "https://github.com/AlexpanXX"
-  logdown: "https://alexpan-blog/logdown.com"
+  email: "teacher_" + (num += 1).to_s + "@live.cn",
+  password: "12345678",
+  nickname: "Teacher " + num.to_s,
+  wechat: "NewbieGeek",
+  github: "https://github.com/AlexpanXX",
+  logdown: "https://alexpan-blog/logdown.com",
   role: "老师"
   )
 }

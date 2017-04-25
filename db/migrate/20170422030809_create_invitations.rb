@@ -7,9 +7,6 @@ class CreateInvitations < ActiveRecord::Migration[5.0]
       t.text :reply
       t.integer :state
 
-      t.index :inviter_id
-      t.index :invited_id
-
       t.timestamps
     end
   end
