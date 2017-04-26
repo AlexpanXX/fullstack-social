@@ -1,0 +1,8 @@
+<div class="container">
+  <h2><%= render_name(@member) %> 收到的评价</h2>
+  <hr/>
+  <%= render partial: "evaluation", collection: @evaluations, as: :evaluation %>
+  <div class="text-center">
+    <%= will_paginate @evaluations, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

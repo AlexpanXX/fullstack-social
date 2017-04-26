@@ -1,0 +1,4 @@
+<%= simple_form_for [:member, @evaluation] do |f| %>
+  <%= f.input :message, label: "评价内容", placeholder: "所有对小伙伴的评价信息是公开的，其他小伙伴也可以看到。" %>
+  <%= f.submit "发表评价", data: {disable_with: "正在发表..."}, class: "btn btn-primary" %>
+<% end %>

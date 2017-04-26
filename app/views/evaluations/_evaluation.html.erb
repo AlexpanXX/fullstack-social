@@ -1,0 +1,10 @@
+<div class="media">
+  <div class="media-left">
+    <a href="<%= member_evaluations_path(evaluation.valuer) %>">
+      <%= render_avatar(evaluation.valuer, "evaluation-avatar") %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= render_name(evaluation.valuer) %></h4>
+  </div>
+</div>
