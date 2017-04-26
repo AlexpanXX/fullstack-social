@@ -4,7 +4,6 @@ class CreateInvitations < ActiveRecord::Migration[5.0]
       t.belongs_to :inviter
       t.belongs_to :invited
       t.text :message
-      t.text :reply
       t.integer :state
 
       t.timestamps

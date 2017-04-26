@@ -1,0 +1,8 @@
+<div class="container">
+  <h2><%= render_name(@member) %> 收到的邀请</h2>
+  <hr/>
+  <%= render partial: "invitation", collection: @invitations, as: :invitation %>
+  <div class="text-center">
+    <%= will_paginate @invitations, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

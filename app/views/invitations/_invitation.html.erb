@@ -1,0 +1,10 @@
+<div class="media">
+  <div class="media-left">
+    <a href="<%= member_invitations_path(invitation.inviter) %>">
+      <%= render_avatar(invitation.inviter, "invitation-avatar") %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= render_name(invitation.inviter) %></h4>
+  </div>
+</div>

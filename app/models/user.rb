@@ -5,10 +5,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :sent_invites, class_name: "Invitation", foreign_key: :inviter_id
-  has_many :received_invites, through: :sent_invites, source: :invited
-  has_many :sent_evaluates, class_name: "Evaluation", foreign_key: :valuer_id
-  has_many :received_evaluates, through: :sent_evaluates, source: :receiver
+  has_many :sent_invitations, class_name: "Invitation", foreign_key: :inviter_id
+  has_many :received_invitations, class_name: "Invitation", foreign_key: :invited_id
+  has_many :sent_evaluations, class_name: "Evaluation", foreign_key: :valuer_id
+  has_many :received_evaluations, class_name: "Evaluation", foreign_key: :receiver_id
 
   def admin?
     self.is_admin
