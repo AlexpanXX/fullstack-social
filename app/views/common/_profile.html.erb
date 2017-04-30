@@ -1,0 +1,30 @@
+<div class="col-sm-5 col-md-4 col-lg-3 profile-bg">
+  <div class="profile">
+    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1feyxzenv4fj30k00b940m.jpg" alt="Header" class="img-responsive profile-img-top">
+    <div class="profile-content">
+      <div class="profile-avatar"><%= link_to(render_avatar(@member, "avatar"), member_invitations_path(@member)) %></div>
+      <h4 class="profile-title"><%= render_name(@member) %></h4>
+      <p class="profile-email"><%= render_email(@member) %></p>
+      <div class="profile-role btn-group">
+        <% if @member.gender == "男" %>
+          <i class="fa fa-mars gender-male btn btn-default" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-venus gender-female btn btn-default" aria-hidden="true"></i>
+        <% end %>
+        <% if @member.role == "老师" %>
+          <span class="role-teacher btn btn-default">Teacher</span>
+        <% else %>
+          <span class="role-student btn btn-default">Student</span>
+        <% end %>
+      </div>
+      <hr/>
+      <div class="profile-links">
+        <a href="<%= @member.logdown %>" class="profile-link"><%= image_tag('logdown_logo.png') %></a>
+        <a href="<%= @member.github %>" class="profile-link"><%= image_tag('github_logo.png') %></a>
+      </div>
+      <div class="profile-wechat">
+        <%= image_tag('wx_logo.png') %> <%= @member.wechat %>
+      </div>
+    </div>
+  </div>
+</div>

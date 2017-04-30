@@ -1,25 +1,20 @@
-// Place all the styles related to the members controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.member-list {
+.profile-bg {
   margin-top: 10px;
-  margin-bottom: 70px;
 }
 
-.member {
+.profile {
   margin: 20px 10px;
   hr {
     margin: 15px 0;
   }
 }
 
-.member-img-top {
+.profile-img-top {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-.member-content {
+.profile-content {
   text-align: center;
   border: 1px solid #b9b9b9;
   border-top: 0px;
@@ -27,7 +22,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 
-  .member-avatar {
+  .profile-avatar {
     margin-top: -65px;
     .avatar {
       margin: 0 auto;
@@ -39,11 +34,15 @@
     }
   }
 
-  .member-title {
+  .profile-title {
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   }
 
-  .member-role {
+  .profile-email {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  }
+
+  .profile-role {
     .btn-default {
       pointer-events: none;
       border-color: #FFF;
@@ -75,30 +74,26 @@
     }
   }
 
-  .member-social {
+  .profile-social {
     margin-top: 15px;
     .btn {
-      font-size: 0.9em;
+      margin: 0 5px;
+      font-size: 0.8em;
       text-shadow: 0 1px 1px rgba(0,0,0,0.2);
       box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
     }
-    .social-status {
-      margin-top: 20px;
-      p {
-        display: inline-block;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-      }
-    }
   }
 
-  .member-links {
+  .profile-links {
     a {
+      color: #555;
+      text-decoration: none;
       margin: 0 15px;
-      box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+      text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
     }
     a:focus,
     a:hover {
-      box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+      box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     }
     img {
       width: 30px;
@@ -106,7 +101,7 @@
     }
   }
 
-  .member-wechat {
+  .profile-wechat {
     color: #757575;
     margin-top: 15px;
     background-color: #F5F5F5;

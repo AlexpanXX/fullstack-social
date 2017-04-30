@@ -1,10 +1,10 @@
 <div class="col-sm-6 col-md-4 col-lg-3">
-  <div class="card">
-    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1feyxzenv4fj30k00b940m.jpg" alt="Header" class="img-responsive card-img-top">
-    <div class="card-content">
-      <div class="card-avatar"><%= link_to(render_avatar(member, "avatar"), member_invitations_path(member)) %></div>
-      <h4 class="card-title"><%= render_name(member) %></h4>
-      <div class="card-role btn-group">
+  <div class="member">
+    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1feyxzenv4fj30k00b940m.jpg" alt="Header" class="img-responsive member-img-top">
+    <div class="member-content">
+      <div class="member-avatar"><%= link_to(render_avatar(member, "avatar"), member_invitations_path(member)) %></div>
+      <h4 class="member-title"><%= render_name(member) %></h4>
+      <div class="member-role btn-group">
         <% if member.gender == "男" %>
           <i class="fa fa-mars gender-male btn btn-default" aria-hidden="true"></i>
         <% else %>
@@ -16,21 +16,21 @@
           <span class="role-student btn btn-default">Student</span>
         <% end %>
       </div>
-      <div class="card-social">
-        <% if member.gender == "男" %>
-          <% @gender = "他" %>
-        <% else %>
-          <% @gender = "她" %>
-        <% end %>
-        <%= link_to("约" + @gender, new_member_invitation_path(member), class: "btn btn-default") %>
-        <%= link_to("了解" + @gender, member_evaluations_path(member), class: "btn btn-default") %>
+      <div class="member-social">
+        <div class="btn-group" role="group">
+          <%= link_to(render_invite(member), new_member_invitation_path(member), class: "btn btn-default") %>
+          <%= link_to(render_get_known(member), member_evaluations_path(member), class: "btn btn-default") %>
+        </div>
+        <div class="social-status">
+          <p>已收到 <%= count_to_s(member.received_invitations.count) %> 约 / <%= count_to_s(member.received_evaluations.count) %> 评价</p>
+        </div>
       </div>
       <hr/>
-      <div class="card-links">
-        <a href="<%= member.logdown %>" class="card-link"><%= image_tag('logdown_logo.png') %></a>
-        <a href="<%= member.github %>" class="card-link"><%= image_tag('github_logo.png') %></a>
+      <div class="member-links">
+        <a href="<%= member.logdown %>" class="member-link"><%= image_tag('logdown_logo.png') %></a>
+        <a href="<%= member.github %>" class="member-link"><%= image_tag('github_logo.png') %></a>
       </div>
-      <div class="card-wechat">
+      <div class="member-wechat">
         <%= image_tag('wx_logo.png') %> <%= member.wechat %>
       </div>
     </div>

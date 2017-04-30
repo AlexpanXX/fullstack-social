@@ -23,6 +23,14 @@ module ApplicationHelper
     end
   end
 
+  def render_email(member)
+    if member.nickname.nil?
+      ''
+    else
+      ('<i class="fa fa-envelope-o" aria-hidden="true"></i> ' + member.email).html_safe
+    end
+  end
+
   def render_avatar(user, classname)
     if user.avatar.file.nil?
       image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1feyxrgn3snj303c03c3yc.jpg", class: classname)
@@ -31,4 +39,19 @@ module ApplicationHelper
     end
   end
 
+  def render_call(member)
+    member.gender == "男" ? "他" : "她"
+  end
+
+  def count_to_s(count)
+    if count > 9999
+      return "10k+"
+    elsif count > 999
+      return "1k+"
+    elsif count > 99
+      return "99+"
+    else
+      return count.to_s
+    end
+  end
 end
