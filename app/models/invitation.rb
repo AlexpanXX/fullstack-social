@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: invitations
+#
+#  id         :integer          not null, primary key
+#  inviter_id :integer
+#  invited_id :integer
+#  message    :text
+#  state      :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Invitation < ApplicationRecord
   belongs_to :inviter, class_name: "User"
   belongs_to :invited, class_name: "User"
