@@ -4,16 +4,16 @@
     <div class="card-content">
       <div class="card-avatar"><%= link_to(render_avatar(member, "avatar"), member_invitations_path(member)) %></div>
       <h4 class="card-title"><%= render_name(member) %></h4>
-      <div class="card-role">
+      <div class="card-role btn-group">
         <% if member.gender == "男" %>
-          <i class="fa fa-mars gender-male" aria-hidden="true"></i>
+          <i class="fa fa-mars gender-male btn btn-default" aria-hidden="true"></i>
         <% else %>
-          <i class="fa fa-venus gender-female" aria-hidden="true"></i>
+          <i class="fa fa-venus gender-female btn btn-default" aria-hidden="true"></i>
         <% end %>
         <% if member.role == "老师" %>
-          <span class="role-teacher">Teacher</span>
+          <span class="role-teacher btn btn-default">Teacher</span>
         <% else %>
-          <span class="role-student">Student</span>
+          <span class="role-student btn btn-default">Student</span>
         <% end %>
       </div>
       <div class="card-social">

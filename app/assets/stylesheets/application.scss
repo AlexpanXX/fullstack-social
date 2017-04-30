@@ -209,13 +209,28 @@
 }
 
 //---------Footer---------
-html, body {
+html {
   height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  position: relative;
   min-height: 100%;
+  padding-bottom: 70px;
 }
 
 footer {
-  clear: both;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   height: 70px;
   margin-top: -70px;
   color: #BDBDBD;

@@ -36,6 +36,7 @@ gem 'will_paginate-bootstrap'
 gem 'carrierwave'
 gem 'font-awesome-rails'
 gem 'seo_helper'
+gem 'annotate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
