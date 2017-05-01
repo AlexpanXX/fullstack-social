@@ -17,6 +17,11 @@
         border-radius: 50%;
         box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
       }
+      img:focus,
+      img:hover {
+        border: 1px solid #BDBDBD;
+        box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+      }
     }
     .message-body {
       .message-header {
