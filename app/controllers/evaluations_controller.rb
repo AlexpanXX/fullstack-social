@@ -2,6 +2,8 @@ class EvaluationsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_member_by_id, only: [:index, :new, :create, :edit, :update]
   before_action :find_evaluation_by_id, only: [:edit, :update]
+  before_action :check_not_self, only: [:new, :create]
+  before_action :check_is_self, only: [:edit, :update]
 
   def index
     @evaluations = @member.received_evaluations.recent.paginate(page: params[:page], per_page: 10)
@@ -13,8 +15,8 @@ class EvaluationsController < ApplicationController
 
   def create
     @evaluation = Evaluation.new(evaluation_params)
-    @evaluation.inviter = current_user
-    @evaluation.invited = @member
+    @evaluation.valuer = current_user
+    @evaluation.receiver = @member
     if @evaluation.save
       redirect_to member_evaluations_path(@member)
       flash[:notice] =  "您对 #{get_name(@member)} 的评价已经成功发表!"
@@ -33,6 +35,20 @@ class EvaluationsController < ApplicationController
   end
 
   private
+
+  def check_is_self
+    unless @evaluation.valuer == current_user
+      flash[:alert] = "您没有权限编辑这条评价"
+      redirect_to :back
+    end
+  end
+
+  def check_not_self
+    if @member == current_user
+      flash[:alert] = "不能对自己进行评价"
+      redirect_to :back
+    end
+  end
 
   def find_member_by_id
     @member = User.find(params[:member_id])

@@ -1,7 +1,23 @@
 <div class="container">
-  <div class="col-md-4 col-md-offset-4">
-    <h2>编辑对 <%= render_name(@member) %> 的评价信息</h2>
-    <hr/>
-    <%= render "form" %>
+  <%= render "common/profile" %>
+  <div class="col-sm-7 col-md-8 col-lg-9">
+    <div class="page-header">
+      <h3>
+        <small>编辑对</small>
+        <%= render_name(@member) %>
+        <small>发表的评价</small>
+      </h3>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= simple_form_for(@evaluation, url: member_evaluation_path(@member)) do |f| %>
+          <%= f.input :message, label: "评价内容", placeholder: "发表的评价对所有对小伙伴是公开的，其他小伙伴也可以看到哦！~" %>
+          <div class="form-actions pull-right">
+            <%= link_to('<i class="fa fa-times" aria-hidden="true"></i> 取消'.html_safe, member_evaluations_path(@member), class: "btn btn-default") %>
+            <%= f.submit "保存编辑", data: {disable_with: "正在保存..."}, class: "btn btn-default" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :evaluations
   end
 
+  resources :invitations do
+    resources :replies
+  end
+
   namespace :personal do
     resources :invitations
     resources :evaluations

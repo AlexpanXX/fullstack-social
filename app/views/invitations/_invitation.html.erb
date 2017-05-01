@@ -19,6 +19,10 @@
       <% if invitation.reply.present? %>
         <% @reply = invitation.reply %>
         <%= render "reply" %>
+      <% else %>
+        <hr/>
+        <%= link_to('<i class="fa fa-reply" aria-hidden="true"></i> 回复'.html_safe,
+        new_invitation_reply_path(invitation), class: "btn btn-default btn-sm pull-right") %>
       <% end %>
     </div>
   </div>

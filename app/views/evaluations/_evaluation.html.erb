@@ -1,10 +1,26 @@
-<div class="media">
-  <div class="media-left">
-    <a href="<%= member_evaluations_path(evaluation.valuer) %>">
-      <%= render_avatar(evaluation.valuer, "evaluation-avatar") %>
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading"><%= render_name(evaluation.valuer) %></h4>
+<div class="evaluation">
+  <div class="message media">
+    <div class="message-avatar media-left media-top">
+      <a href="<%= member_evaluations_path(evaluation.valuer) %>">
+        <%= render_avatar(evaluation.valuer,'') %>
+      </a>
+    </div>
+    <div class="message-body media-body">
+      <h4 class="message-header media-heading">
+        <%= render_name(evaluation.valuer) %>
+        <small class="pull-right"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= render_create_time(evaluation) %></small>
+      </h4>
+      <legend></legend>
+      <div class="message-content">
+        <span class="fa fa-quote-left quote-left"></span>
+        <p><%= evaluation.message %></p>
+        <span class="fa fa-quote-right quote-right"></span>
+      </div>
+      <% if evaluation.valuer == current_user %>
+        <hr/>
+        <%= link_to('<i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑'.html_safe,
+        edit_member_evaluation_path(@member, evaluation), class: "btn btn-default btn-sm pull-right") %>
+      <% end %>
+    </div>
   </div>
 </div>

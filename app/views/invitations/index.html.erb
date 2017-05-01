@@ -6,7 +6,7 @@
         <%= render_name(@member) %>
         <small>收到的邀请</small>
         <% if current_user != @member %>
-          <%= link_to("约" + render_call(@member), new_member_invitation_path(@member), class: "btn btn-default pull-right") %>
+          <%= link_to("约#{render_call(@member)}", new_member_invitation_path(@member), class: "btn btn-default pull-right") %>
         <% end %>
       </h3>
     </div>

@@ -2,6 +2,8 @@ class InvitationsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_member_by_id, only: [:index, :new, :create, :edit, :update]
   before_action :find_invitation_by_id, only: [:edit, :update]
+  before_action :check_not_self, only: [:new, :create]
+  before_action :check_is_self, only: [:edit, :update]
 
   def index
     @invitations = @member.received_invitations.recent.paginate(page: params[:page], per_page: 10)
@@ -33,6 +35,20 @@ class InvitationsController < ApplicationController
   end
 
   private
+
+  def check_is_self
+    unless @invitation.inviter == current_user
+      flash[:alert] = "您没有权限编辑这条邀请信息"
+      redirect_to :back
+    end
+  end
+
+  def check_not_self
+    if @member == current_user
+      flash[:alert] = "不能给自己发送邀请"
+      redirect_to :back
+    end
+  end
 
   def find_member_by_id
     @member = User.find(params[:member_id])

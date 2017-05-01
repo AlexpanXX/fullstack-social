@@ -1,8 +1,18 @@
 <div class="container">
-  <h2><%= render_name(@member) %> 收到的评价</h2>
-  <hr/>
-  <%= render partial: "evaluation", collection: @evaluations, as: :evaluation %>
-  <div class="text-center">
-    <%= will_paginate @evaluations, renderer: BootstrapPagination::Rails %>
+  <%= render "common/profile" %>
+  <div class="col-sm-7 col-md-8 col-lg-9">
+    <div class="page-header">
+      <h3>
+        <%= render_name(@member) %>
+        <small>收到的评价</small>
+        <% if current_user != @member %>
+          <%= link_to("给#{render_call(@member)}评价", new_member_evaluation_path(@member), class: "btn btn-default pull-right") %>
+        <% end %>
+      </h3>
+    </div>
+    <%= render partial: "evaluation", collection: @evaluations, as: :evaluation %>
+    <div class="text-center">
+      <%= will_paginate @evaluations, renderer: BootstrapPagination::Rails %>
+    </div>
   </div>
 </div>
