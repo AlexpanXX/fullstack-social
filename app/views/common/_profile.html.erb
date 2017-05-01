@@ -17,7 +17,21 @@
           <span class="role-student btn btn-default">Student</span>
         <% end %>
       </div>
-      <hr/>
+      <div class="profile-social">
+        <div class="btn-group" role="group">
+          <%= link_to(render_invitations(@member), member_invitations_path(@member), class: "btn btn-default") %>
+          <%= link_to(render_evaluations(@member), member_evaluations_path(@member), class: "btn btn-default") %>
+        </div>
+        <div class="social-status page-header">
+          <h4>
+            <small>共收到 </small>
+            <%= count_to_s(@member.invitations_count) %>
+            <small> 个约 / </small>
+            <%= count_to_s(@member.evaluations_count) %>
+            <small> 个评价</small>
+          </h4>
+        </div>
+      </div>
       <div class="profile-links">
         <a href="<%= @member.logdown %>" class="profile-link"><%= image_tag('logdown_logo.png') %></a>
         <a href="<%= @member.github %>" class="profile-link"><%= image_tag('github_logo.png') %></a>

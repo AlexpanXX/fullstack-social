@@ -21,11 +21,16 @@
           <%= link_to(render_invite(member), new_member_invitation_path(member), class: "btn btn-default") %>
           <%= link_to(render_get_known(member), member_evaluations_path(member), class: "btn btn-default") %>
         </div>
-        <div class="social-status">
-          <p>已收到 <%= count_to_s(member.received_invitations.count) %> 约 / <%= count_to_s(member.received_evaluations.count) %> 评价</p>
+        <div class="social-status page-header">
+          <h4>
+            <small>已收到 </small>
+            <%= count_to_s(member.invitations_count) %>
+            <small> 个约 / </small>
+            <%= count_to_s(member.evaluations_count) %>
+            <small> 个评价</small>
+          </h4>
         </div>
       </div>
-      <hr/>
       <div class="member-links">
         <a href="<%= member.logdown %>" class="member-link"><%= image_tag('logdown_logo.png') %></a>
         <a href="<%= member.github %>" class="member-link"><%= image_tag('github_logo.png') %></a>

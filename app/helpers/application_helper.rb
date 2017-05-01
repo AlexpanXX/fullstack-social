@@ -54,4 +54,14 @@ module ApplicationHelper
       return count.to_s
     end
   end
+
+  def render_invitations(member)
+    gender = render_call(member)
+    gender + "的邀请"
+  end
+
+  def render_evaluations(member)
+    gender = render_call(member)
+    gender + "的评价"
+  end
 end

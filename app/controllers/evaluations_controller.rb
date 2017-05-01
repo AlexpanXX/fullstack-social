@@ -17,7 +17,7 @@ class EvaluationsController < ApplicationController
     @evaluation.invited = @member
     if @evaluation.save
       redirect_to member_evaluations_path(@member)
-      flash[:notice] =  "您对 #{render_name(@member)} 的评价已经成功发表!"
+      flash[:notice] =  "您对 #{get_name(@member)} 的评价已经成功发表!"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class EvaluationsController < ApplicationController
   def update
     if @evaluation.update(evaluation_params)
       redirect_to member_evaluations_path(@member)
-      flash[:notice] =  "成功修改对 #{render_name(@member)} 的评价."
+      flash[:notice] =  "成功修改对 #{get_name(@member)} 的评价."
     else
       render :edit
     end

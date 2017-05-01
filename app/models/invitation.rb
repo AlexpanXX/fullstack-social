@@ -13,7 +13,7 @@
 
 class Invitation < ApplicationRecord
   belongs_to :inviter, class_name: "User"
-  belongs_to :invited, class_name: "User"
+  belongs_to :invited, class_name: "User", counter_cache: :invitations_count, dependent: :destroy
   has_one :reply
 
   validates :message, presence: true

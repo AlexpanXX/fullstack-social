@@ -17,7 +17,7 @@ class InvitationsController < ApplicationController
     @invitation.invited = @member
     if @invitation.save
       redirect_to member_invitations_path(@member)
-      flash[:notice] =  "您的邀请已成功发送给 #{render_name(@member)}."
+      flash[:notice] =  "您的邀请已成功发送给 #{get_name(@member)}."
     else
       render :new
     end
@@ -26,7 +26,7 @@ class InvitationsController < ApplicationController
   def update
     if @invitation.update(invitation_params)
       redirect_to member_invitations_path(@member)
-      flash[:notice] =  "您发送给 #{render_name(@member)} 的邀请修改成功!"
+      flash[:notice] =  "您发送给 #{get_name(@member)} 的邀请修改成功!"
     else
       render :edit
     end
