@@ -1,3 +1,54 @@
 // Place all the styles related to the invitations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.invitation {
+  margin: 20px 0;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #9E9E9E;
+  padding: 20px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  .message {
+    .message-avatar {
+      img {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #FFF;
+        border-radius: 50%;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      }
+    }
+    .message-body {
+      .message-header {
+        font-weight: 400;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      }
+      legend {
+        margin: 10px 0;
+      }
+      .message-content {
+        width: 100%;
+        color: #9E9E9E;
+        .quote-left {
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+        }
+        p {
+          color: #212121;
+          font-size: 1.2em;
+          font-weight: 200;
+          margin: -5px 20px;
+        }
+        .quote-right {
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.invitation:focus,
+.invitation:hover {
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+
+}

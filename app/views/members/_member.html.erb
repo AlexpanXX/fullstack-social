@@ -4,6 +4,7 @@
     <div class="member-content">
       <div class="member-avatar"><%= link_to(render_avatar(member, "avatar"), member_invitations_path(member)) %></div>
       <h4 class="member-title"><%= render_name(member) %></h4>
+      <p class="member-email"><%= render_email(member) %></p>
       <div class="member-role btn-group">
         <% if member.gender == "男" %>
           <i class="fa fa-mars gender-male btn btn-default" aria-hidden="true"></i>

@@ -1,11 +1,11 @@
-<div class="col-sm-5 col-md-4 col-lg-3 profile-bg">
-  <div class="profile">
-    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1feyxzenv4fj30k00b940m.jpg" alt="Header" class="img-responsive profile-img-top">
-    <div class="profile-content">
-      <div class="profile-avatar"><%= link_to(render_avatar(@member, "avatar"), member_invitations_path(@member)) %></div>
-      <h4 class="profile-title"><%= render_name(@member) %></h4>
-      <p class="profile-email"><%= render_email(@member) %></p>
-      <div class="profile-role btn-group">
+<div class="col-sm-5 col-md-4 col-lg-3 member-bg">
+  <div class="member">
+    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1feyxzenv4fj30k00b940m.jpg" alt="Header" class="img-responsive member-img-top">
+    <div class="member-content">
+      <div class="member-avatar"><%= link_to(render_avatar(@member, "avatar"), member_invitations_path(@member)) %></div>
+      <h4 class="member-title"><%= render_name(@member) %></h4>
+      <p class="member-email"><%= render_email(@member) %></p>
+      <div class="member-role btn-group">
         <% if @member.gender == "男" %>
           <i class="fa fa-mars gender-male btn btn-default" aria-hidden="true"></i>
         <% else %>
@@ -17,7 +17,7 @@
           <span class="role-student btn btn-default">Student</span>
         <% end %>
       </div>
-      <div class="profile-social">
+      <div class="member-social">
         <div class="btn-group" role="group">
           <%= link_to(render_invitations(@member), member_invitations_path(@member), class: "btn btn-default") %>
           <%= link_to(render_evaluations(@member), member_evaluations_path(@member), class: "btn btn-default") %>
@@ -32,11 +32,11 @@
           </h4>
         </div>
       </div>
-      <div class="profile-links">
-        <a href="<%= @member.logdown %>" class="profile-link"><%= image_tag('logdown_logo.png') %></a>
-        <a href="<%= @member.github %>" class="profile-link"><%= image_tag('github_logo.png') %></a>
+      <div class="member-links">
+        <a href="<%= @member.logdown %>" class="member-link"><%= image_tag('logdown_logo.png') %></a>
+        <a href="<%= @member.github %>" class="member-link"><%= image_tag('github_logo.png') %></a>
       </div>
-      <div class="profile-wechat">
+      <div class="member-wechat">
         <%= image_tag('wx_logo.png') %> <%= @member.wechat %>
       </div>
     </div>

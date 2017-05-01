@@ -1,0 +1,18 @@
+<hr/>
+<div class="message media">
+  <div class="message-body media-body">
+    <h4 class="message-header media-heading">
+      <small><i class="fa fa-clock-o" aria-hidden="true"></i> <%= render_create_time(@reply) %></small>
+      <span class="pull-right"><%= render_name(@member) %></span>
+    </h4>
+    <legend></legend>
+    <div class="message-content">
+      <span class="fa fa-quote-left quote-left"></span>
+      <p><%= @reply.message %></p>
+      <span class="fa fa-quote-right quote-right"></span>
+    </div>
+  </div>
+  <div class="message-avatar media-right media-top">
+    <%= render_avatar(@member,'') %>
+  </div>
+</div>

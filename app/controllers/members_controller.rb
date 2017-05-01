@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_action :authenticate_user!
   before_action :validate_search_key, only: [:index]
 
   def index

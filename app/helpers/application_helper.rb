@@ -64,4 +64,16 @@ module ApplicationHelper
     gender = render_call(member)
     gender + "的评价"
   end
+
+  def render_create_time(o)
+    render_date_time(o.created_at.localtime)
+  end
+
+  def render_update_time(o)
+    render_date_time(o.updated_at.localtime)
+  end
+
+  def render_date_time(time)
+    time.strftime('%H:%M:%S %Y-%m-%d')
+  end
 end

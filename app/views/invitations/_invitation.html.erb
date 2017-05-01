@@ -1,10 +1,25 @@
-<div class="media">
-  <div class="media-left">
-    <a href="<%= member_invitations_path(invitation.inviter) %>">
-      <%= render_avatar(invitation.inviter, "invitation-avatar") %>
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading"><%= render_name(invitation.inviter) %></h4>
+<div class="invitation">
+  <div class="message media">
+    <div class="message-avatar media-left media-top">
+      <a href="<%= member_invitations_path(invitation.inviter) %>">
+        <%= render_avatar(invitation.inviter,'') %>
+      </a>
+    </div>
+    <div class="message-body media-body">
+      <h4 class="message-header media-heading">
+        <%= render_name(invitation.inviter) %>
+        <small class="pull-right"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= render_create_time(invitation) %></small>
+      </h4>
+      <legend></legend>
+      <div class="message-content">
+        <span class="fa fa-quote-left quote-left"></span>
+        <p><%= invitation.message %></p>
+        <span class="fa fa-quote-right quote-right"></span>
+      </div>
+      <% if invitation.reply.present? %>
+        <% @reply = invitation.reply %>
+        <%= render "reply" %>
+      <% end %>
+    </div>
   </div>
 </div>

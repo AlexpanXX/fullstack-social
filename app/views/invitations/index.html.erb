@@ -1,8 +1,18 @@
 <div class="container">
-  <h2><%= render_name(@member) %> 收到的邀请</h2>
-  <hr/>
-  <%= render partial: "invitation", collection: @invitations, as: :invitation %>
-  <div class="text-center">
-    <%= will_paginate @invitations, renderer: BootstrapPagination::Rails %>
+  <%= render "common/profile" %>
+  <div class="col-sm-7 col-md-8 col-lg-9">
+    <div class="page-header">
+      <h3>
+        <%= render_name(@member) %>
+        <small>收到的邀请</small>
+        <% if current_user != @member %>
+          <%= link_to("约" + render_call(@member), new_member_invitation_path(@member), class: "btn btn-default pull-right") %>
+        <% end %>
+      </h3>
+    </div>
+    <%= render partial: "invitation", collection: @invitations, as: :invitation %>
+    <div class="text-center">
+      <%= will_paginate @invitations, renderer: BootstrapPagination::Rails %>
+    </div>
   </div>
 </div>
