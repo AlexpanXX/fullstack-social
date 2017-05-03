@@ -11,7 +11,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <%= simple_form_for [:member, @invitation] do |f| %>
-          <%= f.input :message, label: "邀请信息", placeholder: "请说明您邀请对方的目的或事由。发出的邀请信息是公开的，其他小伙伴也可以看到哦！~" %>
+          <%= f.input :message, label: "邀请信息", autofocus: true, placeholder: "请说明您邀请对方的目的或事由。发出的邀请信息是公开的，其他小伙伴也可以看到哦！~" %>
           <div class="form-actions pull-right">
             <%= link_to('<i class="fa fa-times" aria-hidden="true"></i> 取消'.html_safe, member_invitations_path(@member), class: "btn btn-default") %>
             <%= f.submit "发送邀请", data: {disable_with: "正在发送..."}, class: "btn btn-default" %>

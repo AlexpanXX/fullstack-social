@@ -11,7 +11,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <%= simple_form_for(@evaluation, url: member_evaluation_path(@member)) do |f| %>
-          <%= f.input :message, label: "评价内容", placeholder: "发表的评价对所有对小伙伴是公开的，其他小伙伴也可以看到哦！~" %>
+          <%= f.input :message, label: "评价内容", autofocus: true, placeholder: "发表的评价对所有对小伙伴是公开的，其他小伙伴也可以看到哦！~" %>
           <div class="form-actions pull-right">
             <%= link_to('<i class="fa fa-times" aria-hidden="true"></i> 取消'.html_safe, member_evaluations_path(@member), class: "btn btn-default") %>
             <%= f.submit "保存编辑", data: {disable_with: "正在保存..."}, class: "btn btn-default" %>
