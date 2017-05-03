@@ -11,6 +11,8 @@ class EvaluationsController < ApplicationController
 
   def new
     @evaluation = Evaluation.new
+    @type = params[:type]
+    puts 'Evaluatiion type:'+ @type.to_s
   end
 
   def create

@@ -6,7 +6,10 @@
         <%= render_name(@member) %>
         <small>收到的评价</small>
         <% if current_user != @member %>
-          <%= link_to("给#{render_call(@member)}评价", new_member_evaluation_path(@member), class: "btn btn-default pull-right") %>
+          <span class="pull-right">
+            <%= link_to(fa_icon("heart-o", text: "赞赏#{render_call(@member)}"), new_member_evaluation_path(@member, type: 1), class: "btn btn-default") %>
+            <%= link_to(fa_icon("exclamation", text: "指正#{render_call(@member)}"), new_member_evaluation_path(@member, type: 2), class: "btn btn-default") %>
+          </span>
         <% end %>
       </h3>
     </div>

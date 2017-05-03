@@ -23,12 +23,18 @@
   border-top-right-radius: 5px;
 }
 
+.member-content:focus,
+.member-content:hover {
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+
+}
+
 .member-content {
   text-align: center;
   background-color: #FFF;
   border: 1px solid #b9b9b9;
   border-top: 0px;
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 
@@ -92,8 +98,8 @@
     margin-top: 15px;
     .btn {
       font-size: 0.9em;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-      box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
     }
     .social-status {
       margin-top: 10px;

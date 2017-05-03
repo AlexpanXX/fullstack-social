@@ -16,7 +16,9 @@ module ApplicationHelper
   end
 
   def render_name(member)
-    if member.nickname.present?
+    if member == current_user
+      '我'
+    elsif member.nickname.present?
       member.nickname
     else
       member.email
@@ -40,6 +42,7 @@ module ApplicationHelper
   end
 
   def render_call(member)
+    member == current_user ? "我" :
     member.gender == "男" ? "他" : "她"
   end
 

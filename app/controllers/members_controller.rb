@@ -13,7 +13,7 @@ class MembersController < ApplicationController
     role_cont: @query_string,
     m: 'or'
     ).result(distinct: true)
-    @members = @result.paginate(page: params[:page], per_page: 20)
+    @members = @result.where.not('id =?', current_user.id).page(params[:page]).per_page(20)
   end
 
   private
