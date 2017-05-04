@@ -7,6 +7,16 @@
         <small>收到的评价</small>
         <% if current_user != @member %>
           <span class="pull-right">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                类型 <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><%= link_to("全部", member_evaluations_path) %></li>
+                <li><%= link_to("赞赏", member_evaluations_path(type: 1)) %></li>
+                <li><%= link_to("指正", member_evaluations_path(type: 2)) %></li>
+              </ul>
+            </div>
             <%= link_to(fa_icon("heart-o", text: "赞赏#{render_call(@member)}"), new_member_evaluation_path(@member, type: 1), class: "btn btn-default") %>
             <%= link_to(fa_icon("exclamation", text: "指正#{render_call(@member)}"), new_member_evaluation_path(@member, type: 2), class: "btn btn-default") %>
           </span>

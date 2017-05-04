@@ -5,16 +5,17 @@
       <h3>
         <small>对</small>
         <%= render_name(@member) %>
-        <small>发表评价</small>
+        <small>进行<%= render_evaluation_type(@type) %></small>
       </h3>
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
         <%= simple_form_for [:member, @evaluation] do |f| %>
-          <%= f.input :message, label: "评价内容", autofocus: true, placeholder: "发表的评价对所有对小伙伴是公开的，其他小伙伴也可以看到哦！~" %>
+          <%= f.input :message, label: "#{render_evaluation_type(@type)}内容", autofocus: true, placeholder: "发表的评价对所有对小伙伴是公开的，其他小伙伴也可以看到哦！~" %>
+          <%= f.hidden_field :type_id,  value: @type %>
           <div class="form-actions pull-right">
             <%= link_to('<i class="fa fa-times" aria-hidden="true"></i> 取消'.html_safe, member_evaluations_path(@member), class: "btn btn-default") %>
-            <%= f.submit "发表评价", data: {disable_with: "正在发表..."}, class: "btn btn-default" %>
+            <%= f.submit "发表#{render_evaluation_type(@type)}", data: {disable_with: "正在发表..."}, class: "btn btn-default" %>
           </div>
         <% end %>
       </div>

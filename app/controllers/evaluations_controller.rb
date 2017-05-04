@@ -4,15 +4,19 @@ class EvaluationsController < ApplicationController
   before_action :find_evaluation_by_id, only: [:edit, :update]
   before_action :check_not_self, only: [:new, :create]
   before_action :check_is_self, only: [:edit, :update]
+  before_action :get_evaluation_type, only: [:index, :new, :create]
 
   def index
-    @evaluations = @member.received_evaluations.recent.paginate(page: params[:page], per_page: 10)
+    if @type.nil?
+      @evaluations = @member.received_evaluations.recent
+    else
+      @evaluations = @member.received_evaluations.recent.where("type_id = ?", @type)
+    end
+    @evaluations = @evaluations.paginate(page: params[:page], per_page: 5)
   end
 
   def new
     @evaluation = Evaluation.new
-    @type = params[:type]
-    puts 'Evaluatiion type:'+ @type.to_s
   end
 
   def create
@@ -56,11 +60,15 @@ class EvaluationsController < ApplicationController
     @member = User.find(params[:member_id])
   end
 
+  def get_evaluation_type
+    @type = params[:type]
+  end
+
   def find_evaluation_by_id
     @evaluation = Evaluation.find(params[:id])
   end
 
   def evaluation_params
-    params.require(:evaluation).permit(:message)
+    params.require(:evaluation).permit(:message, :type_id)
   end
 end

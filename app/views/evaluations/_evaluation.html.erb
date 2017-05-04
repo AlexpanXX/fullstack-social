@@ -4,6 +4,9 @@
       <a href="<%= member_evaluations_path(evaluation.valuer) %>">
         <%= render_avatar(evaluation.valuer,'') %>
       </a>
+      <div class="message-type text-center">
+        <%= render_evaluation_type_icon(evaluation) %>
+      </div>
     </div>
     <div class="message-body media-body">
       <h4 class="message-header media-heading">

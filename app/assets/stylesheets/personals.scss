@@ -3,10 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .personal {
-  margin: 20px 10px;
-  hr {
-    margin: 15px 0;
-  }
+  margin: 30px auto;
 }
 
 .personal-img-top {
@@ -17,7 +14,6 @@
 .personal-content:focus,
 .personal-content:hover {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-
 }
 
 .personal-content {
@@ -25,6 +21,7 @@
   background-color: #FFF;
   border: 1px solid #b9b9b9;
   border-top: 0px;
+  max-width: 564px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

@@ -4,7 +4,7 @@ class CreateEvaluations < ActiveRecord::Migration[5.0]
       t.belongs_to :valuer
       t.belongs_to :receiver
       t.text :message
-      t.integer :type
+      t.integer :type_id
 
       t.timestamps
     end

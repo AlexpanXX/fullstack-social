@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170501021937) do
     t.integer  "valuer_id"
     t.integer  "receiver_id"
     t.text     "message"
-    t.integer  "type"
+    t.integer  "type_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["receiver_id"], name: "index_evaluations_on_receiver_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170501021937) do
     t.integer  "inviter_id"
     t.integer  "invited_id"
     t.text     "message"
-    t.text     "reply"
     t.integer  "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

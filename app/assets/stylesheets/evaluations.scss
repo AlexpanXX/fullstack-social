@@ -23,6 +23,15 @@
         box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
       }
     }
+    .message-type {
+      margin-top: 15px;
+      .fa-heart {
+        color: #BDB76B;
+      }
+      .fa-exclamation {
+        color: #B22222;
+      }
+    }
     .message-body {
       .message-header {
         font-weight: 400;
