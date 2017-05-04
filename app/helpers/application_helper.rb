@@ -16,13 +16,12 @@ module ApplicationHelper
   end
 
   def render_name(member)
-    if member == current_user
-      '我'
-    elsif member.nickname.present?
-      member.nickname
+    if member.nickname.present?
+      name = member.nickname
     else
-      member.email
+      name = member.email
     end
+    return member == current_user ? name + "「我」" : name
   end
 
   def render_email(member)
