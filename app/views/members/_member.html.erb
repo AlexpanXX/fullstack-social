@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-md-4 col-lg-3">
   <div class="member">
-    <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1feyxzenv4fj30k00b940m.jpg" alt="Header" class="img-responsive member-img-top">
+    <%= render_member_header(member) %>
     <div class="member-content">
       <div class="member-avatar"><%= link_to(render_avatar(member, "avatar"), member_invitations_path(member)) %></div>
       <h4 class="member-title"><%= render_name(member) %></h4>

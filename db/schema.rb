@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170501021937) do
     t.integer  "inviter_id"
     t.integer  "invited_id"
     t.text     "message"
+    t.text     "reply"
     t.integer  "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

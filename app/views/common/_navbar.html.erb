@@ -37,9 +37,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to("<span class='fa fa-address-book' aria-hidden='true'></span> 我的邀请".html_safe, personal_invitations_path, class: "scroll") %></li>
-              <li class="divider"></li>
-              <li><%= link_to("<span class='fa fa-star' aria-hidden='true'></span> 我的评价".html_safe, personal_evaluations_path, class: "scroll") %></li>
+              <li><%= link_to("<span class='fa fa-user-circle-o' aria-hidden='true'></span> 个人中心".html_safe, personal_path, class: "scroll") %></li>
               <% if current_user.admin? %>
                 <li class="divider"></li>
                 <li><%= link_to("<span class='fa fa-lock' aria-hidden='true'></span> 后台管理".html_safe, "#") %></li>

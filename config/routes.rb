@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     resources :replies
   end
 
-  namespace :personal do
-    resources :invitations
-    resources :evaluations
+  resource :personal do
+    get :invitations
+    get :evaluations
   end
 
   resources :users

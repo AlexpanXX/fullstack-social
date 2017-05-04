@@ -1,5 +1,15 @@
 <div class="container member-list">
-  <%= render partial: "member", collection: @members, as: :member %>
+  <% if @members.empty? %>
+    <div class="page-header">
+      <h3>
+        <small>没有找到</small>
+        <%= params[:q] %>
+        <small>的相关结果，再试试别的吧~</small>
+      </h3>
+    </div>
+  <% else %>
+    <%= render partial: "member", collection: @members, as: :member %>
+  <% end %>
   <div class="text-center">
     <%= will_paginate @members, renderer: BootstrapPagination::Rails %>
   </div>

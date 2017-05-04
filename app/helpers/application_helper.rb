@@ -29,8 +29,13 @@ module ApplicationHelper
     if member.nickname.nil?
       ''
     else
-      ('<i class="fa fa-envelope-o" aria-hidden="true"></i> ' + member.email).html_safe
+      fa_icon("envelope-o", text: member.email)
     end
+  end
+
+  def render_member_header(member)
+    image_tag(member.gender == "男" ? "header_male.jpg" : "header_female.jpg",
+    class: "img-responsive member-img-top")
   end
 
   def render_avatar(user, classname)
@@ -42,8 +47,7 @@ module ApplicationHelper
   end
 
   def render_call(member)
-    member == current_user ? "我" :
-    member.gender == "男" ? "他" : "她"
+    member == current_user ? "我" : member.gender == "男" ? "他" : "她"
   end
 
   def count_to_s(count)
